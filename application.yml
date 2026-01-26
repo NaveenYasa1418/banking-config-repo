@@ -5,6 +5,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
+    hostname: localhost
   leaseRenewalIntervalInSeconds: 30
   leaseExpirationDurationInSeconds: 90
   prefer-ip-address: true
