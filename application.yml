@@ -18,7 +18,21 @@ management:
   endpoint:
     health:
       show-details: always
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0 
 
 logging:
   level:
     root: INFO
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+  file:
+    name: logs/myapp.log
+zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+
+ 
+
